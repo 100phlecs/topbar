@@ -21,6 +21,7 @@
     options = {
       autoRun: true,
       barThickness: 3,
+      containerId: null,
       barColors: {
         0: "rgba(26,  188, 156, .9)",
         ".25": "rgba(52,  152, 219, .9)",
@@ -61,7 +62,11 @@
       style.zIndex = 100001;
       style.display = "none";
       if (options.className) canvas.classList.add(options.className);
-      document.body.appendChild(canvas);
+      if (options.containerId) {
+        document.querySelector("#" + options.containerId).appendChild(canvas);
+      } else {
+        document.body.appendChild(canvas);
+      }
       addEvent(window, "resize", repaint);
     },
     topbar = {

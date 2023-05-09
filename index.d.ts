@@ -5,6 +5,7 @@ export interface BarColors {
 export interface TopbarConfigOptions {
   autoRun?: boolean
   barThickness?: number
+  containerId?: string
   barColors?: BarColors
   shadowBlur?: number
   shadowColor?: string
